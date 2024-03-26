@@ -1,0 +1,17 @@
+name: Run Docker Compose
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Compose
+        uses: docker/compose@v2
+        with:
+          compose-file: docker-compose.yml
