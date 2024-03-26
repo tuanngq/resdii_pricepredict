@@ -1,6 +1,7 @@
 version: '3'
 services:
   app:
+    container_name: abc
     image: tuanabc/resdii_pricepredict:2.0
     volumes:
       - './data:/Resdii_PricePredict/data'
