@@ -1,0 +1,6 @@
+version: '3'
+services:
+  app:
+    image: tuanabc/resdii_pricepredict:2.0
+    volumes:
+      - '/home/app/3dshop/docker/PricePredictTest/data: /Resdii_PricePredict/data'
