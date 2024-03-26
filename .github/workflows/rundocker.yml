@@ -20,4 +20,13 @@ jobs:
       - name: Run Docker Compose
         run: |
           docker-compose -f docker-compose.yml up -d
+      
+      - name: Copy TestResult.html from container
+        run: docker cp mycontainer:/Resdii_PricePredict/data .
+
+      - name: Upload TestResult.html as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: TestResult
+          path: ./data
 
