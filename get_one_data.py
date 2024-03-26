@@ -18,6 +18,7 @@ query = {
             "city": "Tỉnh Đồng Nai"
         }
     }
+    
 }
 
 res = es.search(index=index, body=query, size=1)
