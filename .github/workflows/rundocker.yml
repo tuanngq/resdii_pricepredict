@@ -28,6 +28,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run python script
       run: |
-        python get_one_data.py
+        python get_one_data.py ${{ secrets.ELASTIC_USERNAME }} ${{ secrets.ELASTIC_PASSWORD }} ${{ secrets.ELASTIC_INDEX }} ${{ secrets.ELASTIC_HOST }}
 
 
