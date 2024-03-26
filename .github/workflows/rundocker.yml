@@ -5,6 +5,12 @@ on:
     branches:
       - main
 
+env:
+  ELASTIC_USERNAME = ${{ secrets.ELASTIC_USERNAME }}
+  ELASTIC_PASSWORD = ${{ secrets.ELASTIC_PASSWORD }}
+  ELASTIC_INDEX = ${{ secrets.ELASTIC_INDEX }}
+  ELASTIC_HOST = ${{ secrets.ELASTIC_HOST }}
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -28,6 +34,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run python script
       run: |
-        python get_one_data.py ${{ secrets.ELASTIC_USERNAME }} ${{ secrets.ELASTIC_PASSWORD }} ${{ secrets.ELASTIC_INDEX }} ${{ secrets.ELASTIC_HOST }}
+        python get_one_data.py
 
 

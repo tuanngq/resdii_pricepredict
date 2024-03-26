@@ -1,13 +1,13 @@
 from elasticsearch import Elasticsearch
 import csv
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 
-load_dotenv()
-username = os.getenv('ELASTIC_USERNAME')
-password = os.getenv('ELASTIC_PASSWORD')
-index = os.getenv('ELASTIC_INDEX')
-host = os.getenv('ELASTIC_HOST')
+# load_dotenv()
+username = os.environ('ELASTIC_USERNAME')
+password = os.environ('ELASTIC_PASSWORD')
+index = os.environ('ELASTIC_INDEX')
+host = os.environ('ELASTIC_HOST')
 
 # Kết nối tới Elasticsearch với thông tin tài khoản
 es = Elasticsearch([{'host': host, 'port': 9200}], http_auth=(username, password))
@@ -18,7 +18,7 @@ query = {
             "city": "Tỉnh Đồng Nai"
         }
     }
-    
+
 }
 
 res = es.search(index=index, body=query, size=1)
