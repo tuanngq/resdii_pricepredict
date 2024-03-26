@@ -4,10 +4,10 @@ import csv
 import os
 
 # load_dotenv()
-username = os.environ('ELASTIC_USERNAME')
-password = os.environ('ELASTIC_PASSWORD')
-index = os.environ('ELASTIC_INDEX')
-host = os.environ('ELASTIC_HOST')
+username = os.environ['ELASTIC_USERNAME']
+password = os.environ['ELASTIC_PASSWORD']
+index = os.environ['ELASTIC_INDEX']
+host = os.environ['ELASTIC_HOST']
 
 # Kết nối tới Elasticsearch với thông tin tài khoản
 es = Elasticsearch([{'host': host, 'port': 9200}], http_auth=(username, password))
