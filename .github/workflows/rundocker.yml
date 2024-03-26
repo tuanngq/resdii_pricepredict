@@ -1,8 +1,9 @@
 name: Run Docker Compose
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   run:
